@@ -10,5 +10,13 @@
   "path": {
     "url": "https://nodejs.org/api/path.html",
     "description": "nodejs path module"
+  },
+  "ramda": {
+    "url": "https://ramdajs.com/docs/",
+    "description": "functional library"
+  },
+  "ora": {
+    "url": "https://github.com/sindresorhus/ora/blob/master/readme.md",
+    "description": "cli spinner"
   }
 }
