@@ -4,8 +4,8 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "install": "yarn link && doc generate",
-    "uninstall": "yarn unlink && rm generated"
+    "register": "yarn link && doc generate",
+    "unregister": "yarn unlink && rm generated"
   },
   "bin": {
     "doc": "./index.js"
