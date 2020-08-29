@@ -1,7 +1,7 @@
 {
   "axios": {
     "url": "https://github.com/axios/axios/blob/master/README.md",
-    "description": "hello"
+    "description": ""
   },
   "fs-extra": {
     "url": "https://github.com/jprichardson/node-fs-extra/blob/master/README.md",

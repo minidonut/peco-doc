@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
+  "scripts": {
+    "install": "yarn link && doc generate"
+  },
   "bin": {
-    "doc": "./peco-doc.sh"
+    "doc": "./index.js"
   }
 }
