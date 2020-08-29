@@ -1,0 +1,5 @@
+{
+  "axios": "https://github.com/axios/axios/blob/master/README.md",
+  "fs-extra": "https://github.com/jprichardson/node-fs-extra/blob/master/README.md",
+  "path": "https://nodejs.org/api/path.html"
+}

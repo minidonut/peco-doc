@@ -1,0 +1,9 @@
+{
+  "name": "peco-doc",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "bin": {
+    "doc": "./peco-doc.sh"
+  }
+}
