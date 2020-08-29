@@ -4,8 +4,10 @@ const path = require('path');
 const base = __dirname;
 const cmd = process.argv[2];
 const data = require('./database.json');
-
 const { spawnSync } = require('child_process');
+
+// unicode whitespace
+const whitespace = ' ';
 
 const filePath = {
   generated: path.join(__dirname, 'generated'),
@@ -28,8 +30,8 @@ const color = {
   white: '\x1b[37m',
 };
 
-function peco() {
-  const selected = spawnSync('peco', [filePath.generated, '--layout=bottom-up'])
+function peco(prompt = 'open') {
+  const selected = spawnSync('peco', [filePath.generated, '--layout=bottom-up', `--prompt=[${prompt}]`])
     .stdout
     .toString()
     .trim();
@@ -46,8 +48,7 @@ function save() {
 
 function generate() {
   const arr = Object.entries(data);
-  const maxKeyLength = arr.reduce((acc, [key]) => Math.max(acc, key.length) ,0);
-  const print = (key, desc) => `${key.padEnd(maxKeyLength)}  ${desc}`;
+  const print = (key, desc) => `${key.padEnd(24)}${whitespace}${desc}`;
 
   fs.writeFileSync(
     path.join(__dirname, 'generated'),
@@ -70,14 +71,14 @@ async function main() {
     process.stdout.write(`(${color.green}key${color.reset}) `);
     const key = await getPipeIn();
     // validate key
-    if(key.split(' ').length > 1) {
-      console.error('key should have no space 😔');
-      process.exit(1);
-    } else if (!key) {
+    if (!key) {
       console.error('key must be specified 😔');
       process.exit(1);
     } else if (key in data) {
       console.error(`'${key}' is already exist. run 'doc update' 😔`);
+      process.exit(1);
+    } else if (key.length > 24) {
+      console.error(`length of the key should be less than 25 😔`);
       process.exit(1);
     }
 
@@ -99,8 +100,8 @@ async function main() {
     generate();
   } else {
 
-    const selected = peco();
-    const key = selected.split(' ')?.[0].trim();
+    const selected = peco(cmd);
+    const key = selected.split(whitespace)?.[0].trim();
     if(!key in data) {
       console.error(`cannot find ${key} in database  😔`);
       process.exit(1);
