@@ -9,6 +9,6 @@
   },
   "path": {
     "url": "https://nodejs.org/api/path.html",
-    "description": ""
+    "description": "nodejs path module"
   }
 }
