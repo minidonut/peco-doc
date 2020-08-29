@@ -8,6 +8,6 @@
     "unregister": "yarn unlink && rm generated"
   },
   "bin": {
-    "doc": "./index.js"
+    "op": "./index.js"
   }
 }
