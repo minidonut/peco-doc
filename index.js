@@ -76,6 +76,9 @@ async function main() {
     } else if (!key) {
       console.error('key must be specified 😔');
       process.exit(1);
+    } else if (key in data) {
+      console.error(`'${key}' is already exist. run 'doc update' 😔`);
+      process.exit(1);
     }
 
     process.stdout.write(`(${color.green}url${color.reset}) `);
