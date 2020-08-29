@@ -13,7 +13,7 @@ elif [ $1 = 'remove' ]; then
 elif [ $1 = 'refresh' ]; then
     node index.js generate
 else  
-    key=$(cat generated | peco)
+    key=$(cat generated | peco --layout=bottom-up)
     if [ -n "$key" ]; then
     open $(node index.js get $key)
     fi
