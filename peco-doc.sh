@@ -10,6 +10,8 @@ elif [ $1 = 'update' ]; then
     node index.js update
 elif [ $1 = 'remove' ]; then
     node index.js remove
+elif [ $1 = 'refresh' ]; then
+    node index.js generate
 else  
     key=$(cat generated | peco)
     if [ -n "$key" ]; then
