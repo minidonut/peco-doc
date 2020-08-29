@@ -1,5 +1,14 @@
 {
-  "axios": "https://github.com/axios/axios/blob/master/README.md",
-  "fs-extra": "https://github.com/jprichardson/node-fs-extra/blob/master/README.md",
-  "path": "https://nodejs.org/api/path.html"
+  "axios": {
+    "url":  "https://github.com/axios/axios/blob/master/README.md",
+    "description": ""
+  },
+  "fs-extra": {
+    "url": "https://github.com/jprichardson/node-fs-extra/blob/master/README.md",
+    "description": ""
+  },
+  "path": {
+    "url": "https://nodejs.org/api/path.html",
+    "description": ""
+  }
 }
